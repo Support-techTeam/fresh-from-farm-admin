@@ -5,7 +5,7 @@ import { ThemeSwapper } from '../themes/ThemeSwapper';
 export const AppBarToolbar = () => (
     <>
         <LocalesMenuButton />
-        <ThemeSwapper />
+        {/* <ThemeSwapper /> */}
         <LoadingIndicator />
     </>
 );

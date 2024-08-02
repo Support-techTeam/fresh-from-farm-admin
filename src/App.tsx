@@ -35,7 +35,7 @@ const i18nProvider = polyglotI18nProvider(
     'en',
     [
         { locale: 'en', name: 'English' },
-        { locale: 'fr', name: 'Français' },
+        // { locale: 'fr', name: 'Français' },
     ]
 );
 
@@ -47,7 +47,7 @@ const App = () => {
     const darkTheme = themes.find(theme => theme.name === themeName)?.dark;
     return (
         <Admin
-            title=""
+            title="Fresh From Farm | Admin"
             dataProvider={dataProviderFactory(
                 process.env.REACT_APP_DATA_PROVIDER || ''
             )}

@@ -77,16 +77,15 @@ const Menu = ({ dense = false }: MenuProps) => {
             <SubMenu
                 handleToggle={() => handleToggle('menuCatalog')}
                 isOpen={state.menuCatalog}
-                name="pos.menu.catalog"
+                // name="pos.menu.catalog"
+                name="Products"
                 icon={<products.icon />}
                 dense={dense}
             >
                 <MenuItemLink
                     to="/products"
                     state={{ _scrollToTop: true }}
-                    primaryText={translate(`resources.products.name`, {
-                        smart_count: 2,
-                    })}
+                    primaryText={'Product Detail'}
                     leftIcon={<products.icon />}
                     dense={dense}
                 />
