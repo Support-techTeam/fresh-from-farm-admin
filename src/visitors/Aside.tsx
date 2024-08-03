@@ -274,7 +274,7 @@ const Order = () => {
             <Typography variant="body2" color="textSecondary">
                 <NumberField
                     source="total"
-                    options={{ style: 'currency', currency: 'USD' }}
+                    options={{ style: 'currency', currency: 'GBP' }}
                 />
             </Typography>
         </>

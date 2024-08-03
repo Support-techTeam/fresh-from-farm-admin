@@ -1,8 +1,8 @@
 import * as React from 'react';
-import DollarIcon from '@mui/icons-material/AttachMoney';
 import { useTranslate } from 'react-admin';
 
 import CardWithIcon from './CardWithIcon';
+import { CurrencyPoundSharp } from '@mui/icons-material';
 
 interface Props {
     value?: string;
@@ -14,8 +14,8 @@ const MonthlyRevenue = (props: Props) => {
     return (
         <CardWithIcon
             to="/orders"
-            icon={DollarIcon}
-            title={translate('pos.dashboard.monthly_revenue')}
+            icon={CurrencyPoundSharp}
+            title={translate('Monthly Revenue')}
             subtitle={value}
         />
     );

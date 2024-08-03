@@ -75,7 +75,7 @@ const VisitorList = () => {
                     />
                     <ColoredNumberField
                         source="total_spent"
-                        options={{ style: 'currency', currency: 'USD' }}
+                        options={{ style: 'currency', currency: 'GBP' }}
                         textAlign="right"
                     />
                     <DateField source="latest_purchase" showTime />

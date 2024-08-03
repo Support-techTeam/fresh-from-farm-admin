@@ -19,7 +19,7 @@ const Totals = () => {
                     <TableCellRight>
                         {record?.total_ex_taxes.toLocaleString(undefined, {
                             style: 'currency',
-                            currency: 'USD',
+                            currency: 'GBP',
                         })}
                     </TableCellRight>
                 </TableRow>
@@ -30,7 +30,7 @@ const Totals = () => {
                     <TableCellRight>
                         {record?.delivery_fees.toLocaleString(undefined, {
                             style: 'currency',
-                            currency: 'USD',
+                            currency: 'GBP',
                         })}
                     </TableCellRight>
                 </TableRow>
@@ -45,7 +45,7 @@ const Totals = () => {
                     <TableCellRight>
                         {record?.taxes.toLocaleString(undefined, {
                             style: 'currency',
-                            currency: 'USD',
+                            currency: 'GBP',
                         })}
                     </TableCellRight>
                 </TableRow>
@@ -56,7 +56,7 @@ const Totals = () => {
                     <TableCellRight sx={{ fontWeight: 'bold' }}>
                         {record?.total.toLocaleString(undefined, {
                             style: 'currency',
-                            currency: 'USD',
+                            currency: 'GBP',
                         })}
                     </TableCellRight>
                 </TableRow>

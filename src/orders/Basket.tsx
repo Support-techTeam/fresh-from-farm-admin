@@ -62,7 +62,7 @@ const Basket = () => {
                                 undefined,
                                 {
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }
                             )}
                         </TableCellRight>
@@ -73,7 +73,7 @@ const Basket = () => {
                                 item.quantity
                             ).toLocaleString(undefined, {
                                 style: 'currency',
-                                currency: 'USD',
+                                currency: 'GBP',
                             })}
                         </TableCellRight>
                     </TableRow>

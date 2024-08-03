@@ -34,7 +34,6 @@ const Login = () => {
 
   const handleSubmit = (formValues: FormValues) => {
     setLoading(true);
-    console.log(formValues, "formValues");
 
     // Ensure email and password are strings
     if (

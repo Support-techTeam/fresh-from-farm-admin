@@ -148,28 +148,28 @@ const TabbedDatagrid = () => {
                                 source="total_ex_taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="delivery_fees"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="total"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                                 sx={{ fontWeight: 'bold' }}
                             />
@@ -199,28 +199,28 @@ const TabbedDatagrid = () => {
                                 source="total_ex_taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="delivery_fees"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="total"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                                 sx={{ fontWeight: 'bold' }}
                             />
@@ -254,28 +254,28 @@ const TabbedDatagrid = () => {
                                 source="total_ex_taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="delivery_fees"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="taxes"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                             />
                             <NumberField
                                 source="total"
                                 options={{
                                     style: 'currency',
-                                    currency: 'USD',
+                                    currency: 'GBP',
                                 }}
                                 sx={{ fontWeight: 'bold' }}
                             />

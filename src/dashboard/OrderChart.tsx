@@ -51,7 +51,7 @@ const OrderChart = (props: { orders?: Order[] }) => {
 
     return (
         <Card>
-            <CardHeader title={translate('pos.dashboard.month_history')} />
+            <CardHeader title={translate('Month History')} />
             <CardContent>
                 <div style={{ width: '100%', height: 300 }}>
                     <ResponsiveContainer>
@@ -94,7 +94,7 @@ const OrderChart = (props: { orders?: Order[] }) => {
                                 formatter={(value: any) =>
                                     new Intl.NumberFormat(undefined, {
                                         style: 'currency',
-                                        currency: 'USD',
+                                        currency: 'GBP',
                                     }).format(value)
                                 }
                                 labelFormatter={(label: any) =>

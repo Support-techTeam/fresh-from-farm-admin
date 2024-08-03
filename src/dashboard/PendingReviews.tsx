@@ -56,7 +56,7 @@ const PendingReviews = () => {
                 }),
             }}
             icon={CommentIcon}
-            title={translate('pos.dashboard.pending_reviews')}
+            title={translate('Pending Reviews')}
             subtitle={total}
         >
             <List sx={{ display }}>

@@ -58,7 +58,7 @@ const MobileGrid = () => {
                                     source="total"
                                     options={{
                                         style: 'currency',
-                                        currency: 'USD',
+                                        currency: 'GBP',
                                     }}
                                 />
                             </Typography>

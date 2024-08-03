@@ -71,7 +71,7 @@ const LoadedGridList = () => {
                                     color="inherit"
                                     options={{
                                         style: 'currency',
-                                        currency: 'USD',
+                                        currency: 'GBP',
                                     }}
                                     sx={{
                                         display: 'inline',

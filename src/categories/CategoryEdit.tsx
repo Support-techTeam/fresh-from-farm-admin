@@ -38,7 +38,7 @@ const CategoryEdit = () => (
                         <ProductRefField source="reference" />
                         <NumberField
                             source="price"
-                            options={{ style: 'currency', currency: 'USD' }}
+                            options={{ style: 'currency', currency: 'GBP' }}
                         />
                         <NumberField
                             source="width"

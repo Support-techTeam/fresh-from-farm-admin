@@ -37,7 +37,7 @@ const NewCustomers = () => {
             <CardWithIcon
                 to="/customers"
                 icon={CustomerIcon}
-                title={translate('pos.dashboard.new_customers')}
+                title={translate('New Customers')}
                 subtitle={
                     <WithListContext render={({ total }) => <>{total}</>} />
                 }

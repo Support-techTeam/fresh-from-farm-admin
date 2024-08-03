@@ -55,7 +55,7 @@ export const PendingOrder = (props: Props) => {
                         color: 'text.primary',
                     }}
                 >
-                    {order.total}$
+                    {order.total}€
                 </Box>
             </ListItemSecondaryAction>
         </ListItem>

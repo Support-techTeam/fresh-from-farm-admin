@@ -60,7 +60,7 @@ const MobileGrid = () => {
                                     source="total_spent"
                                     options={{
                                         style: 'currency',
-                                        currency: 'USD',
+                                        currency: 'GBP',
                                     }}
                                     textAlign="right"
                                 />
