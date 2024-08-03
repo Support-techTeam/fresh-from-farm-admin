@@ -1,0 +1,221 @@
+.item-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.61px;
+  font-weight: 600;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+  text-align: left;
+}
+
+.item-price-per-qty {
+  font-family: 'Jost', sans-serif;
+  font-size: 11.03px;
+  font-weight: 400;
+  line-height: 2.76px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+}
+.item-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 20.49px;
+  font-weight: 600;
+  line-height: 28.37px;
+  text-align: left;
+  color: #c0da71;
+}
+
+.item-discount {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.61px;
+  font-weight: 500;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+  text-align: left;
+}
+
+.service-header-text {
+  font-family: Lily Script One;
+  font-size: 37.81px;
+  font-weight: 400;
+  line-height: 44.11px;
+  text-align: left;
+}
+
+.service-body-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 15.75px;
+  font-weight: 400;
+  line-height: 22.05px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+}
+
+.lead-service-header-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 15.75px;
+  font-weight: 500;
+  line-height: 22.05px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+}
+
+.lead-service-body-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.6px;
+  font-weight: 400;
+  line-height: 18.9px;
+  letter-spacing: 0.005em;
+  text-align: center;
+  padding: 0px 15px;
+}
+
+.service-icon {
+  width: 79.55px;
+  height: 69.31px;
+}
+
+.info-group-buy-leading {
+  font-family: Lily Script One;
+  /* font-size: 48px; */
+  font-weight: 400;
+  /* line-height: 56px; */
+  text-align: left;
+  text-align: center;
+  color: #ffffff;
+}
+
+.info-group-buy-body {
+  font-family: 'Jost', sans-serif;
+  /* font-size: 48px; */
+  font-weight: 600;
+  /* line-height: 52px; */
+  text-align: center;
+  text-align: left;
+  color: #ffffff;
+}
+
+.group-buy-section {
+  background: linear-gradient(
+    -90.39deg,
+    rgba(90, 119, 62, 0.25) 21.76%,
+    rgba(164, 188, 70, 0.47) 77.95%
+  );
+}
+
+.all-products-link {
+  font-family: 'Jost', sans-serif;
+  /* font-size: 20px; */
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: #a4bc46;
+}
+
+.discount-tooltip {
+  font-family: 'Jost', sans-serif;
+  /* font-size: 9.46px; */
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 12.61px;
+  letter-spacing: 0.3152083456516266px;
+  text-align: right;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.discount-item-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.61px;
+  font-weight: 600;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+  text-align: left;
+}
+
+.discount-item-price-per-qty {
+  font-family: 'Jost', sans-serif;
+  font-size: 11.03px;
+  font-weight: 400;
+  line-height: 15.76px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+}
+.discount-item-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 15.76px;
+  font-weight: 600;
+  line-height: 18.91px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+  color: #c0da71;
+}
+
+.discount-item-discount {
+  font-family: 'Jost', sans-serif;
+  font-size: 11.03px;
+  font-weight: 400;
+  line-height: 15.76px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+}
+
+.footer-leading {
+  font-family: 'Jost', sans-serif;
+  /* font-size: 15.76px; */
+  font-weight: 600;
+  line-height: 18.91px;
+  letter-spacing: 0.0015em;
+  /* text-align: left; */
+}
+
+.footer-text {
+  font-family: 'Jost', sans-serif;
+  /* font-size: 12.61px; */
+  font-weight: 500;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+  /* text-align: left; */
+}
+
+.copyright-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.61px;
+  font-weight: 400;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+}
+
+.blog-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 15.76px;
+  font-weight: 600;
+  line-height: 18.91px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+}
+
+.blog-card {
+  width: Hug (278.17px) px;
+  height: Hug (90.07px) px;
+  padding: 15.76px 0px 0px 0px;
+  gap: 9.46px;
+  border-radius: 11.82px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.recipe-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 20.52px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.recipe-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 11.01px;
+  font-weight: 400;
+  text-align: center;
+  color: #61676A;
+}

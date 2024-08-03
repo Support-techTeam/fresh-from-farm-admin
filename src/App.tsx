@@ -35,7 +35,6 @@ const i18nProvider = polyglotI18nProvider(
     'en',
     [
         { locale: 'en', name: 'English' },
-        // { locale: 'fr', name: 'Français' },
     ]
 );
 
@@ -56,7 +55,7 @@ const App = () => {
             dashboard={Dashboard}
             loginPage={Login}
             layout={Layout}
-            i18nProvider={i18nProvider}
+            // i18nProvider={i18nProvider}
             disableTelemetry
             lightTheme={lightTheme}
             darkTheme={darkTheme}

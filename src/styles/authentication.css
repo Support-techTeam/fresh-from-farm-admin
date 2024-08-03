@@ -1,0 +1,19 @@
+.header-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .header-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}

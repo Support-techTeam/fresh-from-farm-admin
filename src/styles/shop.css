@@ -1,0 +1,25 @@
+.thick-stroke {
+  strokeWidth: 1 !important;
+  strokeLinecap: round !important;
+  strokeLinejoin: round !important;
+  stroke-miterlimit: 10 !important;
+  color: brown;
+}
+
+.category-leading {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.61px;
+  font-weight: 500;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+}
+
+.category-header {
+  font-family: 'Jost', sans-serif;
+  font-size: 12.6px;
+  font-weight: 500;
+  line-height: 18.91px;
+  letter-spacing: 0.005em;
+}
+
+
