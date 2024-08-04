@@ -21,24 +21,9 @@ import products from "./products";
 import reviews from "./reviews";
 import Segments from "./segments/Segments";
 import visitors from "./visitors";
+import administrators from "./administrators";
 import { themes, ThemeName } from "./themes/themes";
 import restDataProvider from "./dataProvider/dataProvider";
-import ProductEdit from "./products/ProductEdit";
-
-// const i18nProvider = polyglotI18nProvider(
-//     locale => {
-//         if (locale === 'fr') {
-//             return import('./i18n/fr').then(messages => messages.default);
-//         }
-
-//         // Always fallback on english
-//         return englishMessages;
-//     },
-//     'en',
-//     [
-//         { locale: 'en', name: 'English' },
-//     ]
-// );
 
 const store = localStorageStore(undefined, "F3-ECommerce");
 
@@ -49,16 +34,12 @@ const App = () => {
   return (
     <Admin
       title="Fresh From Farm | Admin"
-      // dataProvider={dataProviderFactory(
-      //     process.env.REACT_APP_DATA_PROVIDER || ''
-      // )}
       dataProvider={restDataProvider}
       store={store}
       authProvider={authProvider}
       dashboard={Dashboard}
       loginPage={Login}
       layout={Layout}
-      // i18nProvider={i18nProvider}
       disableTelemetry
       lightTheme={lightTheme}
       darkTheme={darkTheme}
@@ -66,9 +47,9 @@ const App = () => {
     >
       <CustomRoutes>
         <Route path="/segments" element={<Segments />} />
-        {/* <Route path="/products/:id" element={<ProductEdit />} /> */}
       </CustomRoutes>
       <Resource name="customers" {...visitors} />
+      <Resource name="administrators" {...administrators} />
       <Resource name="orders" {...orders} />
       <Resource name="invoices" {...invoices} />
       <Resource name="products" {...products} />
