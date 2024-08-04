@@ -1,12 +1,12 @@
 import { AuthProvider } from "react-admin";
 import BaseDirectories from "./base_directory/BaseDirectory";
-import apiClient from "./apiClient";
+import axios from "axios";
 
 const authProvider: AuthProvider = {
   login: async ({ email, password }) => {
     try {
       // Make a request to the login endpoint
-      const response = await apiClient.post(
+      const response = await axios.post(
         `${BaseDirectories.BASE_API_URL}/admin/login`,
         {
           email: email,

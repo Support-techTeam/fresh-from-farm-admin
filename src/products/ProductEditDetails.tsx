@@ -10,7 +10,6 @@ import {
   required,
 } from "react-admin";
 import { InputAdornment, Grid } from "@mui/material";
-import { RichTextInput } from "ra-input-rich-text";
 
 // Define required validator
 const req = [required()];

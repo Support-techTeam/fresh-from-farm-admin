@@ -15,8 +15,15 @@ const restDataProvider: DataProvider = {
   getList: async (resource: string, params: any) => {
     console.info("getList", resource);
     try {
+      const userData: any = localStorage.getItem("f3_user_data");
+      const token = JSON.parse(userData)["accessToken"];
+      const header = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      };
       const url = `${apiUrl}/${resource}`;
-      const response = await apiClient.get(url, { params });
+      const response = await apiClient.get(url, { params, headers: header });
       const total = response.data.data.length;
       // Map the response data to include an 'id' property
       const data = response.data.data.map((item: any) => ({
@@ -40,9 +47,17 @@ const restDataProvider: DataProvider = {
 
   getOne: async (resource: string, params: any) => {
     console.log("GET", resource, params.id);
+
     try {
+      const userData: any = localStorage.getItem("f3_user_data");
+      const token = JSON.parse(userData)["accessToken"];
+      const header = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      };
       const url = `${apiUrl}/${resource}/${params.id}`;
-      const response = await apiClient.get(url);
+      const response = await apiClient.get(url, { headers: header });
       const total = response.data.data.length;
       // Map the response data to include an 'id' property
       const data = response.data.data;
@@ -67,32 +82,48 @@ const restDataProvider: DataProvider = {
   },
 
   create: async (resource: string, params: any) => {
-    const formData = new FormData();
-    console.log("imageSrc", formData);
-
+    console.log("create", resource, params);
+    let formData: any;
+    const userData: any = localStorage.getItem("f3_user_data");
+    const token = JSON.parse(userData)["accessToken"];
+    let header: any;
     // Convert 'true'/'false' strings to boolean and handle file uploads
-    Object.keys(params.data).forEach((key: string) => {
-      const value = params.data[key];
+    if (resource === "products") {
+      header = {
+        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      };
 
-      if (key === "imageSrc" && value?.rawFile) {
-        // Append the file separately
-        formData.append("file", value.rawFile);
-      } else if (key === "bestSeller" || key === "specialOffer") {
-        // Convert 'true'/'false' strings to boolean
-        formData.append(
-          key,
-          value === "true" ? true : value === "false" ? false : value
-        );
-      } else {
-        // Append other fields
-        formData.append(key, value);
-      }
-    });
+      formData = new FormData();
+      Object.keys(params.data).forEach((key: string) => {
+        const value = params.data[key];
+
+        if (key === "imageSrc" && value?.rawFile) {
+          // Append the file separately
+          formData.append("file", value.rawFile);
+        } else if (key === "bestSeller" || key === "specialOffer") {
+          // Convert 'true'/'false' strings to boolean
+          formData.append(
+            key,
+            value === "true" ? true : value === "false" ? false : value
+          );
+        } else {
+          // Append other fields
+          formData.append(key, value);
+        }
+      });
+    } else {
+      header = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+      formData = params.data;
+    }
     const url = `${apiUrl}/${resource}`;
     const response = await apiClient.post(url, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+      headers: header,
     });
     const data = response.data.data;
     const formattedData = {
@@ -104,16 +135,15 @@ const restDataProvider: DataProvider = {
 
   update: async (resource: string, params: any) => {
     const url = `${apiUrl}/${resource}/${params.id}`;
-    // const token = localStorage.getItem("authToken");
-    const token: any =  localStorage.getItem("f3_user_data");
-    console.log(JSON.parse(token)['accessToken'], "refreshToken");
-    const oldToken = JSON.parse(token)['accessToken'];
+    const userData: any = localStorage.getItem("f3_user_data");
+    const token = JSON.parse(userData)["accessToken"];
+    const header = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    };
     const response = await apiClient.put(url, params.data, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${oldToken}`,
-      },
+      headers: header,
     });
     const data = response.data.data;
     const formattedData = {
@@ -124,15 +154,33 @@ const restDataProvider: DataProvider = {
   },
 
   delete: async (resource: string, params: any) => {
+    const userData: any = localStorage.getItem("f3_user_data");
+    const token = JSON.parse(userData)["accessToken"];
+    const header = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    };
     const url = `${apiUrl}/${resource}/${params.id}`;
-    await apiClient.delete(url);
+    await apiClient.delete(url, {
+      headers: header,
+    });
     return { data: params.previousData };
   },
 
   deleteMany: async (resource: string, params: any) => {
+    const userData: any = localStorage.getItem("f3_user_data");
+    const token = JSON.parse(userData)["accessToken"];
+    const header = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    };
     await Promise.all(
       params.ids.map((id: number) =>
-        apiClient.delete(`${apiUrl}/${resource}/${id}`)
+        apiClient.delete(`${apiUrl}/${resource}/${id}`, {
+          headers: header,
+        })
       )
     );
     return { data: params.ids };
@@ -146,7 +194,16 @@ const restDataProvider: DataProvider = {
 
     // Make the API request with the IDs as a query parameter
     try {
-      const response = await apiClient.get(url, { params: { id: ids.join(",") } });
+      const userData: any = localStorage.getItem("f3_user_data");
+      const token = JSON.parse(userData)["accessToken"];
+      const header = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+      const response = await apiClient.get(url, {
+        params: { id: ids.join(","), headers: header },
+      });
       const total = response.data.data.length;
       // Map the response data to include an 'id' property
       const data = response.data.data.map((item: any) => ({
@@ -164,8 +221,15 @@ const restDataProvider: DataProvider = {
   },
 
   getManyReference: async (resource: string, params: any) => {
+    const userData: any = localStorage.getItem("f3_user_data");
+    const token = JSON.parse(userData)["accessToken"];
+    const header = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    };
     const url = `${apiUrl}/${resource}`;
-    const response = await apiClient.get(url, { params });
+    const response = await apiClient.get(url, { params, headers: header });
     const total = response.data.data.length;
     // Map the response data to include an 'id' property
     const data = response.data.data.map((item: any) => ({
