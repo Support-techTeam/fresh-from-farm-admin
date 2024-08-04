@@ -8,13 +8,17 @@ import {
   useNotify,
   useRedirect,
   useRefresh,
+  DeleteButton,
+  SaveButton,
+  Toolbar,
+  EditButton,
 } from "react-admin";
 import { Grid, Box, Typography } from "@mui/material";
 
 import Aside from "./Aside";
 import FullNameField from "./FullNameField";
 
-const VisitorEdit = () => {
+const AdminEdit = () => {
   const translate = useTranslate();
   const notify = useNotify();
   const refresh = useRefresh();
@@ -22,15 +26,14 @@ const VisitorEdit = () => {
 
   const onSuccess = (data: any) => {
     notify(
-      `Changes to Customers Detail for "${data.firstName} ${data.lastName}" was saved`
+      `Changes to User Detail for "${data.firstName} ${data.lastName}" was saved`
     );
-    redirect("/customers");
+    redirect("/administrators");
     refresh();
   };
-
   return (
     <Edit
-      title={<VisitorTitle />}
+      title={<AdminTitle />}
       aside={<Aside />}
       mutationMode="pessimistic"
       mutationOptions={{ onSuccess }}
@@ -88,25 +91,40 @@ const VisitorEdit = () => {
                 />
               </Box>
             </Box>
-            <TextInput
-              type="email"
-              source="email"
-              isRequired
-              readOnly
-              sx={{
-                "& .MuiInputBase-input.Mui-disabled": {
-                  color: "black",
-                  backgroundColor: "white",
-                  border: "1px solid gray",
-                  borderTopRightRadius: "10px",
-                  borderTopLeftRadius: "10px",
-                  WebkitTextFillColor: "black",
-                },
-                "& .MuiInputBase-root.Mui-disabled": {
-                  backgroundColor: "white",
-                },
-              }}
-            />
+            <Box display={{ xs: "block", sm: "flex" }}>
+              <Box flex={1} mr={{ xs: 0, sm: "0.5em" }}>
+                <TextInput
+                  type="email"
+                  source="email"
+                  isRequired
+                  readOnly
+                  sx={{
+                    "& .MuiInputBase-input.Mui-disabled": {
+                      color: "black",
+                      backgroundColor: "white",
+                      border: "1px solid gray",
+                      borderTopRightRadius: "10px",
+                      borderTopLeftRadius: "10px",
+                      WebkitTextFillColor: "black",
+                    },
+                    "& .MuiInputBase-root.Mui-disabled": {
+                      backgroundColor: "white",
+                    },
+                  }}
+                />
+              </Box>
+              <Box flex={1} mr={{ xs: 0, sm: "0.5em" }}>
+                <SelectInput
+                  source="roles"
+                  choices={[
+                    { id: "underWriter", name: "underWriter" },
+                    { id: "admin", name: "admin" },
+                    { id: "superAdmin", name: "superAdmin" },
+                    { id: "customerCare", name: "customerCare" },
+                  ]}
+                />
+              </Box>
+            </Box>
             <Box display={{ xs: "block", sm: "flex" }}>
               <Box flex={1} mr={{ xs: 0, sm: "0.5em" }}>
                 <SelectInput
@@ -171,7 +189,7 @@ const VisitorEdit = () => {
   );
 };
 
-const VisitorTitle = () => (
+const AdminTitle = () => (
   <Box display="flex" alignItems="center">
     <Typography
       variant="h6"
@@ -179,10 +197,10 @@ const VisitorTitle = () => (
       fontWeight="bold"
       sx={{ marginRight: "5px" }}
     >
-      Customer |
+      Administrator |
     </Typography>
     <FullNameField source="last_name" size="32" sx={{ margin: "5px 0" }} />
   </Box>
 );
 
-export default VisitorEdit;
+export default AdminEdit;

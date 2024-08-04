@@ -1,3 +1,3 @@
-import simpleRestProvider from 'ra-data-simple-rest';
+// import simpleRestProvider from 'ra-data-simple-rest';
 
-export default simpleRestProvider('http://localhost:4000');
+// export default simpleRestProvider('http://localhost:4000');

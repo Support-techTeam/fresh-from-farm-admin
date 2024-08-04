@@ -16,6 +16,9 @@ import {
   DateInput,
   FormTab,
   NumberInput,
+  useNotify,
+  useRedirect,
+  useRefresh,
 } from "react-admin";
 
 import { ProductEditDetails } from "./ProductEditDetails";
@@ -30,9 +33,21 @@ const ProductTitle = () => {
     </span>
   ) : null;
 };
+const notify = useNotify();
+const refresh = useRefresh();
+const redirect = useRedirect();
+const onSuccess = (data: any) => {
+  notify(`Changes to Product Detail for "${data.name}" was saved`);
+  redirect("/products");
+  refresh();
+};
 
 const ProductEdit = () => (
-  <Edit title={<ProductTitle />}>
+  <Edit
+    title={<ProductTitle />}
+    mutationMode="pessimistic"
+    mutationOptions={{ onSuccess }}
+  >
     {/* <Edit> */}
     <Helmet>
       <title>Edit Product | Fresh From Farm Admin!</title>

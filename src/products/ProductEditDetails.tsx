@@ -8,6 +8,8 @@ import {
   useDataProvider,
   useNotify,
   required,
+  useRedirect,
+  useRefresh,
 } from "react-admin";
 import { InputAdornment, Grid } from "@mui/material";
 
@@ -19,16 +21,19 @@ export const ProductEditDetails = () => {
   const dataProvider = useDataProvider();
   const notify = useNotify();
 
-  const [categories, setCategories] = React.useState<{ id: string; name: string }[]>([]);
+  const [categories, setCategories] = React.useState<
+    { id: string; name: string }[]
+  >([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
+
 
   React.useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await dataProvider.getList('categories', {
+        const { data } = await dataProvider.getList("categories", {
           pagination: { page: 1, perPage: 100 },
-          sort: { field: 'name', order: 'ASC' },
+          sort: { field: "name", order: "ASC" },
         });
         setCategories(data);
         setLoading(false);
@@ -132,7 +137,11 @@ export const ProductEditDetails = () => {
         />
       </Grid>
       <Grid item xs={12} sm={4}>
-        <NumberInput source="criticalQty" label="Critical Stock" validate={req} />
+        <NumberInput
+          source="criticalQty"
+          label="Critical Stock"
+          validate={req}
+        />
       </Grid>
       <Grid item xs={12} sm={4}>
         <TextInput source="origin" label="Origin Country" validate={req} />
@@ -180,7 +189,7 @@ export const ProductEditDetails = () => {
       {/* Description */}
       <Grid item xs={12} sm={12}>
         {/* <RichTextInput source="description" label="" /> */}
-        <TextInput source="description" validate={[required()]}  multiline />
+        <TextInput source="description" validate={[required()]} multiline />
       </Grid>
     </Grid>
   );

@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  CreateButton,
   DatagridConfigurable,
   DateField,
   ExportButton,
@@ -9,27 +10,28 @@ import {
   TopToolbar,
 } from "react-admin";
 import { useMediaQuery, Theme } from "@mui/material";
-
-import CustomerLinkField from "./CustomerLinkField";
+// import SegmentInput from "../visitors/SegmentInput";
+// import MobileGrid from "../visitors/MobileGrid";
+import AdminLinkField from "./AdminLinkField";
 import MobileGrid from "./MobileGrid";
 
-
-const VisitorListActions = () => (
+const AdminListActions = () => (
   <TopToolbar>
+    <CreateButton />
     <SelectColumnsButton />
     <ExportButton />
   </TopToolbar>
 );
 
-const VisitorList = () => {
+const AdminList = () => {
   const isXsmall = useMediaQuery<Theme>((theme) =>
     theme.breakpoints.down("sm")
   );
   return (
     <List
-      sort={{ field: "last_seen", order: "DESC" }}
+      sort={{ field: "updatedAt", order: "DESC" }}
       perPage={25}
-      actions={<VisitorListActions />}
+      actions={<AdminListActions />}
     >
       {isXsmall ? (
         <MobileGrid />
@@ -43,18 +45,14 @@ const VisitorList = () => {
             },
           }}
         >
-          <CustomerLinkField
-            source="last_name"
-            label="Full Name"
-          />
-          <TextField source="phoneNumber" />
+          <AdminLinkField source="last_name" label="Full Name" />
           <TextField source="email" />
-          <TextField source="gender" />
-          <DateField source="createdAt" label="Membership Date" />
+          <TextField source="roles" />
+          <DateField source="updatedAt" label="Updated At" />
         </DatagridConfigurable>
       )}
     </List>
   );
 };
 
-export default VisitorList;
+export default AdminList;

@@ -19,7 +19,6 @@ const authProvider: AuthProvider = {
         localStorage.removeItem("f3_user_data");
         return Promise.reject(new Error(response.data.message));
       } else {
-        console.log(response.data.data);
         // Store the token and username in localStorage
         localStorage.setItem("authToken", response.data.data?.accessToken);
         localStorage.setItem("username", email);
@@ -30,7 +29,7 @@ const authProvider: AuthProvider = {
         return Promise.resolve();
       }
     } catch (error: any) {
-      console.error("Login error", error);
+      // console.error("Login error", error);
       return Promise.reject(
         new Error(error.response?.data?.message || "Login failed")
       );

@@ -46,26 +46,6 @@ const EventList = () => {
     const record = useRecordContext();
     const translate = useTranslate();
 
-    // const { data: orders, total: totalOrders } = useGetList<OrderRecord>(
-    //     'orders',
-    //     {
-    //         pagination: { page: 1, perPage: 100 },
-    //         sort: { field: 'date', order: 'DESC' },
-    //         filter: { customer_id: record?.id },
-    //     },
-    //     { enabled: !!record?.id }
-    // );
-    // const { data: reviews, total: totalReviews } = useGetList<ReviewRecord>(
-    //     'reviews',
-    //     {
-    //         pagination: { page: 1, perPage: 100 },
-    //         sort: { field: 'date', order: 'DESC' },
-    //         filter: { customer_id: record?.id },
-    //     },
-    //     { enabled: !!record?.id }
-    // );
-    // const events = mixOrdersAndReviews(orders, reviews);
-
     return (
         <Box ml={2}>
             <Card>
@@ -88,33 +68,6 @@ const EventList = () => {
                                 />
                             </Box>
                         </Grid>
-                        {/* <Grid item xs={6} display="flex" gap={1}>
-                            {totalOrders! > 0 && record && (
-                                <>
-                                    <order.icon
-                                        fontSize="small"
-                                        color="disabled"
-                                    />
-                                    <Link
-                                        variant="body2"
-                                        flexGrow={1}
-                                        to={{
-                                            pathname: '/orders',
-                                            search: `displayedFilters=${JSON.stringify(
-                                                { customer_id: true }
-                                            )}&filter=${JSON.stringify({
-                                                customer_id: record.id,
-                                                status: 'delivered',
-                                            })}`,
-                                        }}
-                                    >
-                                        {translate('Orders Amount', {
-                                            smart_count: totalOrders,
-                                        })}
-                                    </Link>
-                                </>
-                            )}
-                        </Grid> */}
                         <Grid item xs={6} display="flex" gap={1}>
                             <AccessTimeIcon fontSize="small" color="disabled" />
                             <Box flexGrow={1}>
@@ -126,37 +79,9 @@ const EventList = () => {
                                 <DateField record={record} source="updatedAt" />
                             </Box>
                         </Grid>
-                        {/* <Grid item xs={6} display="flex" gap={1}>
-                            {totalReviews! > 0 && record && (
-                                <>
-                                    <review.icon
-                                        fontSize="small"
-                                        color="disabled"
-                                    />
-                                    <Link
-                                        variant="body2"
-                                        flexGrow={1}
-                                        to={{
-                                            pathname: '/reviews',
-                                            search: `displayedFilters=${JSON.stringify(
-                                                { customer_id: true }
-                                            )}&filter=${JSON.stringify({
-                                                customer_id: record.id,
-                                            })}`,
-                                        }}
-                                    >
-                                        {translate('resources.reviews.amount', {
-                                            smart_count: totalReviews,
-                                        })}
-                                    </Link>
-                                </>
-                            )}
-                        </Grid> */}
                     </Grid>
                 </CardContent>
             </Card>
-
-            {/* {events && <Timeline events={events} />} */}
         </Box>
     );
 };
