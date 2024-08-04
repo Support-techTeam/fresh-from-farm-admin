@@ -1,37 +1,21 @@
-import * as React from 'react';
-import { Create, TabbedForm, TextInput, required } from 'react-admin';
-import { ProductEditDetails } from './ProductEditDetails';
-const RichTextInput = React.lazy(() =>
-    import('ra-input-rich-text').then(module => ({
-        default: module.RichTextInput,
-    }))
-);
+import * as React from "react";
+import {
+  Create,
+  SimpleForm,
+} from "react-admin";
+import { ProductEditDetails } from "./ProductEditDetails";
+import { Helmet } from "react-helmet-async";
 
 const ProductCreate = () => (
-    <Create>
-        <TabbedForm defaultValues={{ sales: 0 }}>
-            <TabbedForm.Tab
-                label="resources.products.tabs.image"
-                sx={{ maxWidth: '40em' }}
-            >
-                <TextInput autoFocus source="image" validate={required()} />
-                <TextInput source="thumbnail" validate={required()} />
-            </TabbedForm.Tab>
-            <TabbedForm.Tab
-                label="resources.products.tabs.details"
-                path="details"
-                sx={{ maxWidth: '40em' }}
-            >
-                <ProductEditDetails />
-            </TabbedForm.Tab>
-            <TabbedForm.Tab
-                label="resources.products.tabs.description"
-                path="description"
-            >
-                <RichTextInput source="description" label="" />
-            </TabbedForm.Tab>
-        </TabbedForm>
-    </Create>
+  <Create>
+      <Helmet>
+        <title>Create Product | Fresh From Farm Admin!</title>
+        <link rel="canonical" href={window?.location?.href} />
+      </Helmet>
+    <SimpleForm>
+      <ProductEditDetails />
+    </SimpleForm>
+  </Create>
 );
 
 export default ProductCreate;

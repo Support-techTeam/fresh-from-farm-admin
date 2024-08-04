@@ -36,11 +36,11 @@ const Aside = () => {
                 <SavedQueriesList />
 
                 <FilterList
-                    label="resources.products.filters.sales"
+                    label="Sales"
                     icon={<AttachMoneyIcon />}
                 >
                     <FilterListItem
-                        label="resources.products.filters.best_sellers"
+                        label="Best Sellers"
                         value={{
                             sales_lte: undefined,
                             sales_gt: 25,
@@ -48,7 +48,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.average_sellers"
+                        label="Average Sellers"
                         value={{
                             sales_lte: 25,
                             sales_gt: 10,
@@ -56,7 +56,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.low_sellers"
+                        label="Low Sellers"
                         value={{
                             sales_lte: 10,
                             sales_gt: 0,
@@ -64,7 +64,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.never_sold"
+                        label="Never Sold"
                         value={{
                             sales_lte: undefined,
                             sales_gt: undefined,
@@ -74,11 +74,11 @@ const Aside = () => {
                 </FilterList>
 
                 <FilterList
-                    label="resources.products.filters.stock"
+                    label="Stock"
                     icon={<BarChartIcon />}
                 >
                     <FilterListItem
-                        label="resources.products.filters.no_stock"
+                        label="No Stock"
                         value={{
                             stock_lt: undefined,
                             stock_gt: undefined,
@@ -86,7 +86,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.low_stock"
+                        label="Low Stock"
                         value={{
                             stock_lt: 10,
                             stock_gt: 0,
@@ -94,7 +94,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.average_stock"
+                        label="Average Stock"
                         value={{
                             stock_lt: 50,
                             stock_gt: 9,
@@ -102,7 +102,7 @@ const Aside = () => {
                         }}
                     />
                     <FilterListItem
-                        label="resources.products.filters.enough_stock"
+                        label="Enough Stock"
                         value={{
                             stock_lt: undefined,
                             stock_gt: 49,
@@ -112,7 +112,7 @@ const Aside = () => {
                 </FilterList>
 
                 <FilterList
-                    label="resources.products.filters.categories"
+                    label="Categories"
                     icon={<LocalOfferIcon />}
                 >
                     {data &&

@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { useRecordContext, Link } from 'react-admin';
-import { Product } from '../types';
 
 const ProductRefField = (_: { source: string }) => {
-    const record = useRecordContext<Product>();
+    const record = useRecordContext();
     return record ? (
-        <Link to={`/products/${record.id}`}>{record.reference}</Link>
+        <Link to={`/products/${record.id}`}>{record.name}</Link>
     ) : null;
 };
 

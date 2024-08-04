@@ -22,10 +22,10 @@ const BaseDirectories = {
   //   },
 
   /** Directories and folders. */
-  IMAGES_DIR: "/images",
-  LOGOS_DIR: "/logos",
-  ICONS_DIR: "/icons",
-  TEAM_DIR: "/team",
+  IMAGES_DIR: "/assets/images",
+  LOGOS_DIR: "/assets//logos",
+  ICONS_DIR: "/assets/icons",
+  TEAM_DIR: "/assets//team",
 };
 
 export default BaseDirectories;

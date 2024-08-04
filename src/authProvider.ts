@@ -1,12 +1,12 @@
-import axios from "axios";
 import { AuthProvider } from "react-admin";
 import BaseDirectories from "./base_directory/BaseDirectory";
+import apiClient from "./apiClient";
 
 const authProvider: AuthProvider = {
   login: async ({ email, password }) => {
     try {
       // Make a request to the login endpoint
-      const response = await axios.post(
+      const response = await apiClient.post(
         `${BaseDirectories.BASE_API_URL}/admin/login`,
         {
           email: email,
@@ -42,7 +42,14 @@ const authProvider: AuthProvider = {
     localStorage.removeItem("f3_user_data");
     return Promise.resolve();
   },
-  checkError: () => Promise.resolve(),
+  checkError: (error) => {
+    if (error.status === 401) {
+      // Handle token expiration
+      // localStorage.removeItem("authToken");
+      return Promise.reject();
+    }
+    return Promise.resolve();
+  },
   checkAuth: () =>
     localStorage.getItem("f3_user_data") ? Promise.resolve() : Promise.reject(),
   getPermissions: () => Promise.resolve(),
