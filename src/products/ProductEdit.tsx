@@ -33,21 +33,9 @@ const ProductTitle = () => {
     </span>
   ) : null;
 };
-const notify = useNotify();
-const refresh = useRefresh();
-const redirect = useRedirect();
-const onSuccess = (data: any) => {
-  notify(`Changes to Product Detail for "${data.name}" was saved`);
-  redirect("/products");
-  refresh();
-};
 
 const ProductEdit = () => (
-  <Edit
-    title={<ProductTitle />}
-    mutationMode="pessimistic"
-    mutationOptions={{ onSuccess }}
-  >
+  <Edit title={<ProductTitle />} mutationMode="pessimistic">
     {/* <Edit> */}
     <Helmet>
       <title>Edit Product | Fresh From Farm Admin!</title>

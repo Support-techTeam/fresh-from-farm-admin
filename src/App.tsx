@@ -1,4 +1,4 @@
-import polyglotI18nProvider from "ra-i18n-polyglot";
+
 import {
   Admin,
   CustomRoutes,
@@ -12,8 +12,6 @@ import { Route } from "react-router";
 import authProvider from "./authProvider";
 import categories from "./categories";
 import { Dashboard } from "./dashboard";
-// import dataProviderFactory from './dataProvider';
-import englishMessages from "./i18n/en";
 import invoices from "./invoices";
 import { Layout, Login } from "./layout";
 import orders from "./orders";
